@@ -4,11 +4,23 @@ Feature: estimated wait time for help
   So that I can decide whether to wait in line or not
   I want to know my estimated wait time
   
-Scenario: students signs in for “drop-in”
-  When a student is on the home page 
-  When the student clicks sign in
-  Then I should see a wait time
+Background: student requests in database
+ 
+  Given the following student queues exist:
+  | first_name | last_name | sid        |
+  | Salvador   | Villegas  | 25804240   |
+  | Maiki      | Rainton   | 00000000   |
+  | Nahrae     | Seok      | 25804241   |
+  | Alex       | Yang      | 25804242   |
 
+Scenario: students signs up for “drop-in”
+  Given I am on the sign up page
+  When I fill in the "student_requests" form and click "Submit"
+  Then I should see a wait time of "120 min"
+
+Scenario: student visits wait time page
+  Given I am on the wait time page for "Alex" "Yang"
+  Then I should see a wait time of "90 min"
   
-#student email confirmation should have abiltiy to cancel I think
+#student email confirmation should have ability to cancel I think
 

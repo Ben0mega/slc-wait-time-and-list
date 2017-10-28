@@ -1,0 +1,29 @@
+<h1>Active Sessions</h1>
+<table id="queue">
+  <tr>
+    <th>Start Time</th>
+    <th>Student Name</th>
+    <th>Tutor Name</th>
+  </tr>
+</table>
+<tr></tr>
+<h1>Queue</h1>
+<table id="queue">
+<tr>
+  <th>Number</th>
+  <th>Waiting</th>
+  <th>Name</th>
+  <th>Course</th>
+</tr>
+
+<tr>
+<% @queue_entries.each do |entry| %>
+      <tr id="q_row">
+        <td></td>
+        <td><%= time_diff(entry.created_at, Time.now) %></td>
+        <td><%= %Q(#{entry.student.first_name} #{entry.student.last_name}) %></td>
+        <td><%= entry.course %></td>
+        <% end %>
+      </tr>
+</tr>
+</table>
