@@ -5,6 +5,24 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  resources :students do
+    resources :drop_in_histories
+  end
+
+
+  resources :student_queues
+
+
+  root 'students#new'
+  get 'students/:id/sign_in' => 'students#sign_in', as: :sign_in_student
+  get 'student_queues/:id/wait_time' => 'student_queues#wait_time', as: :wait_time_student_queue
+  get 'student_queues/:id/confirm' => 'student_queues#confirm', as: :confirm_student_queue
+  get 'student_queues/:id/remove' => 'student_queues#remove', as: :remove_student_queue
+
+  #the following routes exist to allow for redirects to *#create methods since redirec_to only
+  #issues redirects to controller actions that have the GET http verb.
+  get 'student_queues/:id/create' => 'student_queues#create', as: :create_student_queue
+ 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

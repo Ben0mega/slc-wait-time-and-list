@@ -4,9 +4,12 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+#ignore coverage/
+coverage/
+
 # Ignore bundler config.
 /.bundle
-
+.byebug_history
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -15,3 +18,5 @@
 /log/*
 !/log/.keep
 /tmp
+.idea/
+.DS_Store

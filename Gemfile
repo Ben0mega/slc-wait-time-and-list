@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-ruby '2.3.0'
+ruby '2.4.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.9'
 # Use SCSS for stylesheets
@@ -51,12 +51,16 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'metric_fu'
   gem 'jasmine-rails'
+
+  #auto complete rails 4 commands.
+  gem 'rails4-autocomplete', '~> 1.1', '>= 1.1.1'
 end
 
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'simplecov', :require => false
+  gem 'guard-rspec'
 end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
