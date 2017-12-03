@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-ruby '2.3.0'
+ruby '2.4.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.9'
 # Use SCSS for stylesheets
@@ -13,6 +13,13 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+#gem for password protect
+gem "figaro"
+
+#gem for spreadsheet creation
+gem 'axlsx_rails'
+
+gem 'traceroute'
 gem 'haml'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -22,6 +29,17 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'bootstrap', '~> 4.0.0.beta2.1'
+
+gem 'jquery-rails'
+
+
+gem "animate-rails"
+
+#for password authentication.
+gem 'devise'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -51,12 +69,16 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'metric_fu'
   gem 'jasmine-rails'
+
+  #auto complete rails 4 commands.
+  gem 'rails4-autocomplete', '~> 1.1', '>= 1.1.1'
 end
 
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'simplecov', :require => false
+  gem 'guard-rspec'
 end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views

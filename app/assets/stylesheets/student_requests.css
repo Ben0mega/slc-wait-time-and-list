@@ -1,0 +1,38 @@
+/*table.queue {
+  margin: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+
+table.queue th {
+  border: 2px solid white;
+  font-weight: bold;
+  background-color: wheat;
+}
+
+table.queue th, table#movies td {
+  padding: 4px;
+  text-align: left;
+}
+
+table.queue th.hilite {
+  background-color: yellow;
+}*/
+
+.btn-activate{
+  margin-left: 16px;
+}
+.btn-finish{
+  margin-left: 16px;
+}
+
+#tutor-log-out{
+  position: absolute;
+  margin-left: 12px;
+  margin-top: -25px;
+}
+
+#table-page-container{
+  margin-top: 40px;
+}

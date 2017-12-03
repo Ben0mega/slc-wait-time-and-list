@@ -11,5 +11,8 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require animate
  *= require_self
  */
+
+ @import "bootstrap";

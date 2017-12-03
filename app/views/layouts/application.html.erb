@@ -5,10 +5,21 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+  <script src="https://use.fontawesome.com/02e2fcd7e1.js"></script>
 </head>
 <body>
-
-<%= yield %>
-
+    <div id="main">
+      <% if flash[:notice] %>
+        <div class="message" id="notice">
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash[:warning] %>
+        <div class="message" id="warning">
+          <%= flash[:warning] %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
 </body>
 </html>

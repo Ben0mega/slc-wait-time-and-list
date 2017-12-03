@@ -13,8 +13,26 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+
     when /^the home\s?page$/
       '/'
+    when /^the student line page$/ then tutors_path
+        #these two routes below render the same thing...will have to modify
+    when /^the sign up page$/ then new_student_path
+    when /^the student page$/ then students_path
+    when /^the history\s?page$/ then history_entries_path
+    when /^the tutor firewall page$/ then tutor_firewall_path
+
+    when /^the app firewall page$/ then app_firewall_path
+    when /^the wait time page for "(.*)" "(.*)"$/i then
+      student = Student.where(:first_name => $1, :last_name => $2)[0]
+      student_request = student.student_requests.where(meet_type: "drop-in")[0]
+      wait_time_student_request_path(student_request.id)
+      
+    when /^the confirmation page for "([^"]*)" "([^"]*)"$/ then
+      student = Student.where(:first_name => $1, :last_name => $2)[0]
+      student_request = student.student_requests.where(meet_type: "drop-in")[0]
+      confirm_student_request_path(student_request.id)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

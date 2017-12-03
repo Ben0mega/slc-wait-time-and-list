@@ -4,10 +4,14 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+#ignore coverage/
+coverage/
+
+config/application.yml
 # Ignore bundler config.
 /.bundle
-
-# Ignore the default SQLite database.
+.byebug_history
+# Ignore the fault SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
@@ -15,3 +19,8 @@
 /log/*
 !/log/.keep
 /tmp
+.idea/
+.DS_Store
+
+# Ignore application configuration
+/config/application.yml
